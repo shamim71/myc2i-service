@@ -1,0 +1,30 @@
+<web-app
+	version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    	<servlet>
+		<servlet-name>spring-restful-server-app</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/spring-application-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>spring-restful-server-app</servlet-name>
+		<url-pattern>/service/*</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>spring.profiles.default</param-name>
+		<!-- <param-value>${spring.profile}</param-value> -->
+		<!-- During development using eclipse enable the following line and disable previous one -->
+		<param-value>development</param-value>
+	</context-param>
+
+</web-app>

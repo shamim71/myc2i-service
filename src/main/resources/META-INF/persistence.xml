@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+      
+	<persistence-unit name="applicationPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <class>com.versacom.myc2i.domain.Customer</class> -->
+		<properties>
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
